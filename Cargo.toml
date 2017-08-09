@@ -1,5 +1,5 @@
 [package]
-name = "rust-nn"
+name = "reading-deeplearning-for-rust"
 version = "0.1.0"
 authors = ["Tomohiko Himura <eiel.hal@gmail.com>"]
 
