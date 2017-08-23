@@ -9,10 +9,11 @@ fn sigmoid(x: f64) -> f64 {
     1.0 / (1.0 + f64::exp(-x))
 }
 
+// 解説
+// https://goo.gl/FPm4tq
 #[test]
-fn page_49() {
+fn page_48() {
     let x = Vector3::new(-1.0, 1.0, 2.0).map(sigmoid);
-    // let x = Vector3::new(-1.0, 1.0, 2.0).sigmoid();
     println!("{}", x);
 
     let range = 0.00000001;
@@ -30,7 +31,9 @@ fn page_49() {
     assert!(x[2] > expect_x3 - range);
 }
 
-// http://qiita.com/eielh/items/5568d2f89924ce3adcef#p26-232-%E9%87%8D%E3%81%BF%E3%81%A8%E3%83%90%E3%82%A4%E3%82%A2%E3%82%B9%E3%81%AE%E5%B0%8E%E5%85%A5
+
+// 解説
+// https://goo.gl/AFMx6b
 #[test]
 fn page_26() {
     let x = Matrix1x2::new(0.0, 1.0);
@@ -48,6 +51,8 @@ fn page_26() {
     assert!(sum > expect - range);
 }
 
+// 解説
+// https://goo.gl/UKqopj
 #[test]
 fn page_53_1() {
     let a = Vector4::new(1.0, 2.0, 3.0, 4.0);
@@ -61,10 +66,7 @@ fn page_53_1() {
 
 #[test]
 fn page_53_2() {
-    let b = Matrix3x2::new(
-        1,2,
-        3,4,
-        5,6);
+    let b = Matrix3x2::new(1, 2, 3, 4, 5, 6);
     println!("{}", b.nrows()); // => 3
     let (rows, columns) = b.shape();
     println!("{}, {}", rows, columns); // =>s 3, 2
